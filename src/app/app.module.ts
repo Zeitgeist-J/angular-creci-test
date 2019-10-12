@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { TopBarComponent } from './Core/top-bar/top-bar.component';
 
 
 
@@ -11,11 +12,11 @@ import { AppComponent } from './app.component';
   imports:      [ BrowserModule, FormsModule,
   
   RouterModule.forRoot([
-    { },
+    { path: '', component: AppComponent },
   ])
   
   ],
-  declarations: [ AppComponent, ],
+  declarations: [ AppComponent, TopBarComponent, ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
