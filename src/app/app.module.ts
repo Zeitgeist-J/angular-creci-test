@@ -12,7 +12,7 @@ import { TopBarComponent } from './Core/top-bar/top-bar.component';
   imports:      [ BrowserModule, FormsModule,
   
   RouterModule.forRoot([
-    { path: '', component: AppComponent },
+    { path: 'Home', component: AppComponent },
   ])
   
   ],

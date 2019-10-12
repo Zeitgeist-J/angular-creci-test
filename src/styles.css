@@ -1,1 +1,4 @@
 /* Add application styles & imports to this file! */
+p, div, span {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
