@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './Core/top-bar/top-bar.component';
+import { MovieComponent } from './Core/movie/movie.component';
 
 
 
