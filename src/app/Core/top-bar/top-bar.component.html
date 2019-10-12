@@ -1,13 +1,16 @@
 <div class="contains">
   <h1>
-    <a [routerLink] = "['home']">Movies</a>
-    <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+    <a [title]="Home" [routerLink]="['home']">Movies 
+      <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+    </a>    
   </h1>
   <div class="menu">
     <a href="">List</a>
     <a href="">Lorem, ipsum.</a>
   </div>
-  <div class="user">
-      <a href="">My account</a>
+  <div class="user">     
+      <a href="">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> My account
+      </a>
   </div>  
 </div>
