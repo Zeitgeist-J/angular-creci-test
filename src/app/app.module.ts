@@ -17,7 +17,7 @@ import { MovieComponent } from './Core/movie/movie.component';
   ])
   
   ],
-  declarations: [ AppComponent, TopBarComponent, ],
+  declarations: [ AppComponent, TopBarComponent, MovieComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
