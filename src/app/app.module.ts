@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './Core/top-bar/top-bar.component';
 import { MovieComponent } from './Core/movie/movie.component';
 import { MoviesService } from './movies.service';
+import { LogInComponent } from './Core/log-in/log-in.component';
+import { HomeComponent } from './Core/home/home.component';
 
 
 
@@ -18,11 +20,13 @@ import { MoviesService } from './movies.service';
   imports:      [ BrowserModule, FormsModule, HttpClientModule, 
   
   RouterModule.forRoot([
-    { path: 'Home', component: AppComponent },
+    { path: '', component: HomeComponent },
+    { path: 'Home', component: HomeComponent },
+    { path: 'LogIn', component: LogInComponent}
   ])
   
   ],
-  declarations: [ AppComponent, TopBarComponent, MovieComponent ],
+  declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [MoviesService]
 })

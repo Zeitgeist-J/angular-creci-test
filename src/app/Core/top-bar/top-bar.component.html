@@ -12,8 +12,8 @@
     </div>
   </div>
   <div class="user">     
-      <a href="">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> My account
+      <a [routerLink]="('LogIn')" href="" (click)="logged()">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{isLogged}}
       </a>
   </div>  
 </div>
