@@ -2,9 +2,9 @@
   <br>
   <form>
     <h1>
-        <a [title]="Home" [routerLink]="['home']">Movies 
-          <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-        </a>    
+      <a [title]="Home" [routerLink]="['home']">Movies 
+        <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+      </a>    
     </h1>
     <div class="form-group">      
       <label for="exampleInputEmail1">Email address</label>
@@ -21,7 +21,13 @@
     -->
     <div class="tinybox">
       <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary">Register</button>     
     </div>
+    <span class="other">      
+      <button [routerLink]="('Home')" type="submit" class="btn btn-primary">return</button>      
+    </span>
   </form>  
+  <span class="other">      
+    <button (click)="getToken()" type="submit" class="btn btn-primary">return</button>      
+  </span>
 </div>

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './Core/top-bar/top-bar.component';
@@ -10,9 +12,17 @@ import { MovieComponent } from './Core/movie/movie.component';
 import { MoviesService } from './movies.service';
 import { LogInComponent } from './Core/log-in/log-in.component';
 import { HomeComponent } from './Core/home/home.component';
+import { RegisterComponent } from './Core/register/register.component';
+import { FirebaseService } from './firebase.service';
 
 
-
+const config = {
+  apiKey: "a481d499b03c4c1e346fbc84db7b9ff9",
+  authDomain: "creci-f6340.firebaseapp.com",
+  databaseURL: "https://creci-f6340.firebaseio.com",
+  storageBucket: "creci-f6340.appspot.com",
+  messagingSenderId: "42917465053"
+};
 
 
 
@@ -21,13 +31,14 @@ import { HomeComponent } from './Core/home/home.component';
   
   RouterModule.forRoot([
     { path: '', component: HomeComponent },
+    { path: 'new', component: RegisterComponent},
     { path: 'Home', component: HomeComponent },
     { path: 'LogIn', component: LogInComponent}
   ])
   
   ],
-  declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent ],
+  declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [MoviesService]
+  providers: [MoviesService, FirebaseService]
 })
 export class AppModule { }
