@@ -9,7 +9,4 @@ import { FirebaseApp } from '@angular/fire';
 export class AppComponent  {
   name = 'Angular';
 
-  constructor(public app: FirebaseApp){
-
-  }
 }
