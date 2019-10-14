@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -14,7 +15,11 @@ export class TopBarComponent implements OnInit {
     this.isLogged = this.test? "My account":"LogIn";    
   }
 
-  constructor() { }
+  goLog(){
+    this.router.navigate(['/LogIn']);
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

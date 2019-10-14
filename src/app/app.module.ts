@@ -9,20 +9,11 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './Core/top-bar/top-bar.component';
 import { MovieComponent } from './Core/movie/movie.component';
-import { MoviesService } from './movies.service';
 import { LogInComponent } from './Core/log-in/log-in.component';
 import { HomeComponent } from './Core/home/home.component';
 import { RegisterComponent } from './Core/register/register.component';
-import { FirebaseService } from './firebase.service';
+import { MoviesService } from './Services/movies.service';
 
-
-const config = {
-  apiKey: "a481d499b03c4c1e346fbc84db7b9ff9",
-  authDomain: "creci-f6340.firebaseapp.com",
-  databaseURL: "https://creci-f6340.firebaseio.com",
-  storageBucket: "creci-f6340.appspot.com",
-  messagingSenderId: "42917465053"
-};
 
 
 
@@ -32,13 +23,13 @@ const config = {
   RouterModule.forRoot([
     { path: '', component: HomeComponent },
     { path: 'new', component: RegisterComponent},
-    { path: 'Home', component: HomeComponent },
+    { path: 'Home', component: HomeComponent},
     { path: 'LogIn', component: LogInComponent}
   ])
   
   ],
   declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [MoviesService, FirebaseService]
+  providers: [MoviesService]
 })
 export class AppModule { }

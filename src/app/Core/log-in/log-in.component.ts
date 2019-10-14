@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -8,16 +9,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(protected http: HttpClient) { }
+  constructor(protected http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
 
-  getToken(){
-    var x = () => this.http.get('https://api.themoviedb.org/3/movie/76341?api_key=a481d499b03c4c1e346fbc84db7b9ff9');
-    console.log(x);
-    return x;
+  backHome(){
+    this.router.navigate(['/Home']);
   }
+
+ 
   
 
 

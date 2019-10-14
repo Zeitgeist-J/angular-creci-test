@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FirebaseApp } from '@angular/fire';
 
+
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -8,5 +10,6 @@ import { FirebaseApp } from '@angular/fire';
 })
 export class AppComponent  {
   name = 'Angular';
+
 
 }
