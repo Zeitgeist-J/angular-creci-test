@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from './Services/movies.service';
+import { ConnectService } from './connect.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { MoviesService } from './Services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private token: MoviesService) { }
+  constructor(private token: ConnectService ) { }
 
   ngOnInit() {
     this.getToken();
