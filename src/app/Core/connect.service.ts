@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
-export class Connect {
+export class ConnectService {
 
   constructor(private http: HttpClient) { }
 
