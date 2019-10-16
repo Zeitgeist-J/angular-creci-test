@@ -26,14 +26,14 @@ export class MovieComponent implements OnInit {
     this.id += `: ${id}`;
     console.log(this.id);
 
-   /* this.current = this.route.paramMap.pipe(
+    this.current = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.moviesService.getFullMovie(id))
-    );*/
+        this.moviesService.getFullMovie('id'))
+    );
 
-    this.movie = this.moviesService.getMovie(this.id);
+    //this.movie = this.moviesService.getMovie(this.id);
     
-    console.log(this.movie);
+    console.log(this.current);
   }
 
 
