@@ -14,6 +14,7 @@ import { LogInComponent } from './Core/log-in/log-in.component';
 import { HomeComponent } from './Core/home/home.component';
 import { RegisterComponent } from './Core/register/register.component';
 import { MoviesService } from './Services/movies.service';
+import { MovieSenderService } from './Services/movie-sender.service';
 
 
 
@@ -33,6 +34,6 @@ import { MoviesService } from './Services/movies.service';
   ],
   declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [MoviesService]
+  providers: [MoviesService, MovieSenderService]
 })
 export class AppModule { }

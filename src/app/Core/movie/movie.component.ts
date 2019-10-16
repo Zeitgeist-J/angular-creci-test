@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { MoviesService } from '../../Services/movies.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movie',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 
-  selectedMovie: any[] = []
+  @Input() movie: any[]; 
+  Fmovie: any[];
 
-  constructor() { }
+
+  constructor(private moviesServive: MoviesService) {
+  } 
 
   ngOnInit() {
   }
+
 
 }

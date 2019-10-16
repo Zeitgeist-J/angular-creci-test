@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MoviesService } from '../../Services/movies.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +11,13 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   NewMovies: any[] = [];
+  SelectedMovie: any[];
 
 
-  constructor(private Movie: MoviesService, private router: Router ) {
+  @Output() id = new EventEmitter<any[]>();
 
+
+  constructor(private Movie: MoviesService, private router: Router) {
     this.Movie.getDiscoverMovies().subscribe((data: any ) => {
       console.log(data);
       this.NewMovies = data;
@@ -24,9 +28,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/Movie']);
   }
 
-
-
-
+  SendMovie(movie: any[]){
+    this.id.emit(movie);
+    this.SelectedMovie = movie;
+    console.log(movie);
+  }
 
   ngOnInit() {
     
