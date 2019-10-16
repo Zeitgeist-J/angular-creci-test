@@ -8,14 +8,18 @@ import { ConnectService } from '../connect.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private token: ConnectService ) { }
+  NewMovies: any[] = [];
+
+
+  constructor(private Movie: ConnectService ) {
+
+    this.Movie.getDiscoverMovies().subscribe((data: any ) => {
+      console.log(data);
+      this.NewMovies = data;
+    });
+  }
 
   ngOnInit() {
-    this.getToken();
+    
   }
-
-  getToken(){
-    this.token.getToken().suscribe(tk => console.log('success'));
-  }
-
 }
