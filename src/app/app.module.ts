@@ -26,7 +26,8 @@ import { MoviesService } from './Services/movies.service';
     { path: '', component: HomeComponent },
     { path: 'new', component: RegisterComponent},
     { path: 'Home', component: HomeComponent},
-    { path: 'LogIn', component: LogInComponent}
+    { path: 'LogIn', component: LogInComponent},
+    { path: 'Movie', component: MovieComponent}
   ])
   
   ],

@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  GoMovie(route: String){
-    this.router.navigate(['/Movie{this.route}']);
+  GoMovie(){
+    this.router.navigate(['/Movie']);
   }
 
 
