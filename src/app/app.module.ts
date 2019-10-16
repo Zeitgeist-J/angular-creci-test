@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule,HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
@@ -20,7 +20,7 @@ import { ConnectService } from './Core/connect.service';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, 
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, HttpClientJsonpModule, 
   
   RouterModule.forRoot([
     { path: '', component: HomeComponent },

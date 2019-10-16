@@ -17,6 +17,7 @@
     "angularfire2": "^5.2.1",
     "core-js": "2",
     "firebase": "^7.2.0",
+    "jsonp-client": "^1.2.2",
     "rxjs": "^6.5.2",
     "zone.js": "^0.9.1"
   },

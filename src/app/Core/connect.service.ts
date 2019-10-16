@@ -11,7 +11,7 @@ export class ConnectService {
 
   constructor(private http: HttpClient) { }
 
- /* getQuery(query: String){
+  getQuery(query: String){
     const url = `https://api.themoviedb.org/3${query}&api_key=${this.apiKey}&language=en-US&callback=JSONP_CALLBACK`;
     return this.http.jsonp(url, "");
   }
@@ -34,7 +34,7 @@ export class ConnectService {
     return this.getQueryforMovie(`/movie/${id}`).pipe(
       map((data: any) => data)
     );
-  }*/
+  }/*
   getQuery(query: string) {
     const url = `https://api.themoviedb.org/3${query}&api_key=${
       this.apikey
