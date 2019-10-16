@@ -1,7 +1,7 @@
 .contains {
   margin: 0;
   display:grid;
-  grid-template-columns: 4fr 3fr 2fr;
+  grid-template-columns: 4fr 3fr 2fr 1fr;
   grid-gap: 1em;
   padding: 0.5em;
   background-color: rgb(131, 131, 131);  
