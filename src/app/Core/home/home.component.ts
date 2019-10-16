@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConnectService } from '../connect.service';
+import { MoviesService } from '../../Services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   NewMovies: any[] = [];
 
 
-  constructor(private Movie: ConnectService ) {
+  constructor(private Movie: MoviesService ) {
 
     this.Movie.getDiscoverMovies().subscribe((data: any ) => {
       console.log(data);

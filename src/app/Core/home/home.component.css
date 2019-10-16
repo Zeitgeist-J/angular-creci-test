@@ -1,4 +1,5 @@
 .content {
+  padding-top: 3rem;
   align-items: flex-start;
   justify-items: center;  
   display: grid;
@@ -6,6 +7,21 @@
   grid-auto-flow: minmax(500px, auto);
   grid-gap: 1rem;
   background-color: black;
+}
+
+p, h5 {
+  color: black;
+}
+
+h5{
+  font-family: Impact, Charcoal, sans-serif;
+}
+.card-body {
+  background-color: grey;
+}
+
+.btn btn-primary {
+  justify-content: center;
 }
 
 

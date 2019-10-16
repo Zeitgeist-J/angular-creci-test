@@ -14,7 +14,7 @@ import { LogInComponent } from './Core/log-in/log-in.component';
 import { HomeComponent } from './Core/home/home.component';
 import { RegisterComponent } from './Core/register/register.component';
 import { MoviesService } from './Services/movies.service';
-import { ConnectService } from './Core/connect.service';
+
 
 
 
@@ -32,6 +32,6 @@ import { ConnectService } from './Core/connect.service';
   ],
   declarations: [ AppComponent, TopBarComponent, MovieComponent, LogInComponent, HomeComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [MoviesService, ConnectService]
+  providers: [MoviesService]
 })
 export class AppModule { }
