@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  test = false;
+  test: boolean;
   isLogged: any = this.test? "My account":"LogIn";
   
   logged(){ 
@@ -22,6 +22,8 @@ export class TopBarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.test = true;
+    this.test = !this.test; 
   }
 
 }
