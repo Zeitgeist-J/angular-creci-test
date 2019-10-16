@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MoviesService } from '../../Services/movies.service';
-
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap  } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +12,13 @@ export class HomeComponent implements OnInit {
 
   NewMovies: any[] = [];
   SelectedMovie: any[];
+  Current
 
 
   @Output() id = new EventEmitter<any[]>();
 
 
-  constructor(private Movie: MoviesService, private router: Router) {
+  constructor(private Movie: MoviesService, private router: Router, private route: ActivatedRoute, private service: MoviesService) {
     this.Movie.getDiscoverMovies().subscribe((data: any ) => {
       console.log(data);
       this.NewMovies = data;
@@ -35,6 +36,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.Current = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.service.getMovie(params.get('id')))
+    );
     
   }
 }

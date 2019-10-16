@@ -17,6 +17,9 @@ export class MovieComponent implements OnInit {
   } 
 
   ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id');
+
+    this.hero$ = this.service.getHero(id);
   }
 
 

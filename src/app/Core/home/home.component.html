@@ -6,7 +6,7 @@
       <div class="card-body">
         <h5 class="card-title">{{NewMovie.original_title}}</h5>
         <p class="card-text">{{NewMovie.overview}}</p>
-        <button (click)="SendMovie(NewMovie);GoMovie()" class="btn btn-dark">See Movie</button>        
+        <button [routerLink]="['/Movie', NewMovie.id]" (click)="SendMovie(NewMovie)" class="btn btn-dark">See Movie</button>        
       </div>
     </div>
   </span>

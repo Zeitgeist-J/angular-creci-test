@@ -28,7 +28,7 @@ import { MovieSenderService } from './Services/movie-sender.service';
     { path: 'new', component: RegisterComponent},
     { path: 'Home', component: HomeComponent},
     { path: 'LogIn', component: LogInComponent},
-    { path: 'Movie', component: MovieComponent}
+    { path: 'Movie/:id', component: MovieComponent}
   ])
   
   ],
