@@ -45,3 +45,7 @@ a:hover{
   grid-template-columns: 3fr 1fr;
   background-color: aqua;
 }
+
+.form-control {
+  border-color: Black;
+}

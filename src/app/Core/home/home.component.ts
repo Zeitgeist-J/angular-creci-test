@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../Services/movies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,20 @@ export class HomeComponent implements OnInit {
   NewMovies: any[] = [];
 
 
-  constructor(private Movie: MoviesService ) {
+  constructor(private Movie: MoviesService, private router: Router ) {
 
     this.Movie.getDiscoverMovies().subscribe((data: any ) => {
       console.log(data);
       this.NewMovies = data;
     });
   }
+
+  GoMovie(route: String){
+    this.router.navigate(['/Movie{this.route}']);
+  }
+
+
+
 
 
   ngOnInit() {
