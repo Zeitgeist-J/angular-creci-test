@@ -17,7 +17,7 @@ export class MoviesService {
   }
   
   getQueryforMovie(query: String){
-    const url = `https://api.themoviedb.org/3/movie/${query}&api_key=${this.apiKey}&language=en-US&callback=JSONP_CALLBACK`;
+    const url = `https://api.themoviedb.org/3/movie/${query}?api_key=${this.apiKey}&language=en-US&callback=JSONP_CALLBACK`;
     return this.http.jsonp(url, "");
   }
   getDiscoverMovies() {
@@ -31,7 +31,7 @@ export class MoviesService {
 
 
   getMovie(id: String){
-    return this.getQueryforMovie(id).pipe(
+    return this.getQueryforMovie(`${id}`).pipe(
       map((data: any) => data)
     );
   }
@@ -40,8 +40,8 @@ export class MoviesService {
     return this.getQueryforMovie(`https://api.themoviedb.org/3/movie/${id}?api_key=a481d499b03c4c1e346fbc84db7b9ff9&language=en-US`).pipe(
       map((data: any) => data)
     );
-    
-
+   
+ 
   }
 
 }

@@ -1,17 +1,25 @@
-<!--<img src='https://image.tmdb.org/t/p/w500' alt="Super poster">
-<h2>{{movie.genre_ids}}</h2>
-<h3>original_title: "Joker"</h3>
-<p>overview: "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure."</p>
-<p>original_language: "en"</p>
-backdrop_path: "/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg"
-genre_ids: (3) [80, 18, 53]
+<app-top-bar></app-top-bar>
+<div class="all">
+  <div class="present">
+    <h2>{{movie.original_title}}</h2>
+  </div>
+  <div class="present">
+    <img src='https://image.tmdb.org/t/p/w500{{movie.poster_path}}' alt="Super poster">
+  </div>  
+  <div class="tittle">
+    <p>Overview: {{movie.overview}}</p>    
+  </div>
+  <p>Popularity: {{movie.popularity}}</p>
+  <p>Vote average: {{movie.vote_average}}</p>
+  <p>vote count: {{movie.vote_count}}</p>
+  <div class="tittle">
+    <a *ngIf = "movie.homepage" href="{{movie.homepage}}">
+      Avalilable on Netflix
+      <img src='https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}' alt="Super poster"> 
+    </a>   
+  </div>
+  
+  
 
-
-overview: "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure."
-popularity: 588.352
-poster_path: "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
-release_date: "2019-10-04"
-
-vote_average: 8.6
-vote_count: 2891-->
+</div>
 

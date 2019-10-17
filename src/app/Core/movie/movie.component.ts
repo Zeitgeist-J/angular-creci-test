@@ -12,28 +12,20 @@ export class MovieComponent implements OnInit {
 
   movie: any[];
   id: String;
-  current;
 
-  constructor(private moviesService: MoviesService, private route: ActivatedRoute) {
+  constructor(
+    private moviesService: MoviesService,
+    private route: ActivatedRoute
+  ){ } 
+
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+ 
+    console.log(this.id);
     this.moviesService.getMovie(this.id).subscribe((data: any ) => {
       console.log(data);
       this.movie = data;
     });
-  } 
-
-  ngOnInit() {
-    let id = +this.route.snapshot.paramMap.get('id');
-    this.id += `: ${id}`;
-    console.log(this.id);
-
-    this.current = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.moviesService.getFullMovie('id'))
-    );
-
-    //this.movie = this.moviesService.getMovie(this.id);
-    
-    console.log(this.current);
   }
 
 
