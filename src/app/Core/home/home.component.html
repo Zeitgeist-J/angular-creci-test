@@ -4,10 +4,11 @@
     <div class="card" style="width: 27rem;">
       <img src='https://image.tmdb.org/t/p/w500{{NewMovie.poster_path}}' class="card-img-top" alt= '{{NewMovie.original_title}} Poster' >
       <div class="card-body">
-        <h5 class="card-title">{{NewMovie.original_title}}</h5>
+        <h5 class="card-title">{{NewMovie.original_title | uppercase}}</h5>
         <p class="card-text">{{NewMovie.overview}}</p>
         <button [routerLink]="['/Movie', NewMovie.id]" (click)="SendMovie(NewMovie)" class="btn btn-dark">See Movie</button>        
       </div>
     </div>
   </span>
+  <button type="button" class="btn btn-light" (click) = "more()">More</button>
 </div>

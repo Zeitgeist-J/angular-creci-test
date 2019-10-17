@@ -8,6 +8,7 @@ export class MoviesService {
 
   private apiKey: String = "a481d499b03c4c1e346fbc84db7b9ff9";
   private UrlMovie: String = "https://api.themoviedb.org/3";
+  private x = 1;
 
   constructor(private http: HttpClient) { }
 
@@ -19,9 +20,16 @@ export class MoviesService {
   getQueryforMovie(query: String){
     const url = `https://api.themoviedb.org/3/movie/${query}?api_key=${this.apiKey}&language=en-US&callback=JSONP_CALLBACK`;
     return this.http.jsonp(url, "");
+    this.x = this.x +1;
   }
   getDiscoverMovies() {
-    return this.getQuery("/discover/movie?api_key=a481d499b03c4c1e346fbc84db7b9ff9&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&").pipe(
+    return this.getQuery("/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false").pipe(
+      map((data: any) => data.results)
+    );
+  }
+
+  DiscoverMovies(x: String) {
+    return this.getQuery("/discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&page=" + x).pipe(
       map((data: any) => data.results)
     );
   }

@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   NewMovies: any[] = [];
   SelectedMovie: any[];
-  Current
+  Current = 1;
 
 
   @Output() id = new EventEmitter<any[]>();
@@ -20,6 +20,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private Movie: MoviesService, private router: Router, private route: ActivatedRoute, private service: MoviesService) {
     this.Movie.getDiscoverMovies().subscribe((data: any ) => {
+      console.log(data);
+      this.NewMovies = data;
+    });
+  }
+
+  more(){
+    this.Current = this.Current + 1;
+    this.Movie.DiscoverMovies(String(this.Current)).subscribe((data: any ) => {
       console.log(data);
       this.NewMovies = data;
     });
