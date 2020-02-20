@@ -1,7 +1,7 @@
 <app-top-bar></app-top-bar>
 <div class="content">
   <span *ngFor = "let NewMovie of NewMovies">
-    <div class="card" style="width: 27rem;">
+    <div class="card" style="width: 27rem; heigth: 100%">
       <img src='https://image.tmdb.org/t/p/w500{{NewMovie.poster_path}}' class="card-img-top" alt= '{{NewMovie.original_title}} Poster' >
       <div class="card-body">
         <h5 class="card-title">{{NewMovie.original_title | uppercase}}</h5>
